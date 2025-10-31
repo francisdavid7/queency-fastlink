@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@layer components {
+    nav ul li {
+        @apply grid items-center h-18 cursor-pointer transition-all;
+    }
+    nav ul li a {
+        @apply grid items-center h-full;
+    }
+
+    .darkModeIcon {
+        @apply ml-2 border border-blue-600 cursor-pointer text-blue-600 hover:text-blue-800 transition-all w-10 h-10 flex items-center justify-center rounded-md;
+    }
+
+    .dropDownContent .content {
+        @apply rounded-md p-4 grid;
+        min-width: 200px;
+        z-index: 1000;
+    }
+
+    .section {
+        @apply lg:px-[10%] md:px-[5%] sm:px-[3%] px-[2%];
+    }
+
+    .counter h4 {
+        @apply lg:text-3xl sm:text-2xl text-xl;
+    }
+}

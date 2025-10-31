@@ -1,0 +1,285 @@
+:root {
+  /* ====== LIGHT MODE COLORS ====== */
+  --color-primary: #3b82f6;          /* Bright blue */
+  --color-primary-light: #7e9cff;     /* Deep blue for hover */
+  --color-accent: #6366f1;           /* Purple accent */
+  
+  --color-bg: #ffffff;               /* Main background */
+  --color-surface: #f9fafb;          /* Card backgrounds */
+  --color-text: #1f2937;             /* Main text color */
+  --color-text-light: #6b7280;       /* Muted paragraph text */
+  
+  --color-border: #e5e7eb;           /* Light gray border */
+  --color-shadow: rgba(0, 0, 0, 0.05); /* Soft shadow */
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #3b82f6, #6366f1);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.4s ease;
+}
+
+.dark-mode {
+  /* ====== DARK MODE COLORS ====== */
+  --color-primary: #60a5fa;          /* Softer blue for dark mode */
+  --color-primary-light: #2563eb;
+  --color-accent: #818cf8;
+
+  --color-bg: #0f172a;               /* Main dark background */
+  --color-surface: #1e293b;          /* Card background */
+  --color-text: #f1f5f9;             /* Main text */
+  --color-text-light: #94a3b8;       /* Muted text */
+
+  --color-border: #334155;           /* Subtle border */
+  --color-shadow: rgba(0, 0, 0, 0.3);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #2563eb, #4f46e5);
+}
+
+.bg-color {
+    background: var(--color-bg);
+}
+
+body {
+    letter-spacing: 0.0005em;
+    background: var(--color-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Inter";
+    color: var(--color-text);
+}
+
+p, span, a, li, div, button {
+    font-family: "Syne";
+    color: var(--color-text);
+}
+
+.batch {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+}
+
+.heading span, .subHeading span {
+    color: var(--color-primary);
+    font-family: "inter";
+}
+
+.section {
+    padding: 5% 10%;
+}
+
+.color-surface {
+    background: var(--color-surface);
+}
+
+.paragraph {
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+button {
+    background: var(--color-primary);
+    transition: var(--transition-fast);
+    cursor: pointer;
+    color: #fff;
+}
+
+button.transparent {
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+button.transparent:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+button:hover {
+    background: var(--color-primary-light);
+}
+
+.no-outline {
+    outline: none;
+    border: none !important;
+}
+
+.no-outline:hover {
+    background: none !important;
+    color: var(--color-primary-light) !important;
+}
+
+.counter * {
+    border-color: var(--color-border);
+}
+
+nav {
+    background: var(--color-surface);
+}
+
+nav ul > li:not(:last-child):hover {
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+nav ul > li {
+    transition: var(--transition-medium);
+}
+
+nav ul > li.dropDown span {
+    transition: var(--transition-medium);
+}
+
+nav ul > li.dropDown:hover span {
+    color: var(--color-primary);
+}
+
+.dropDownContent {
+    left: -30px;
+    transform-origin: top;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: var(--transition-medium);
+    pointer-events: none;
+}
+
+.dropDown:hover .dropDownContent {
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dropDownContent .content {
+    background: var(--color-surface);
+}
+
+.dropDownContent .content * {
+    transition: var(--transition-medium);
+    padding: 8px 5px;
+}
+
+.dropDownContent .content *:hover {
+    color: var(--color-primary);
+}
+
+.mobileMenuToggle {
+    display: none;
+    padding: 5px;
+    border: 1px solid var(--color-primary);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.grid-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background-image: linear-gradient(to right, #aec1ff1f 1px, transparent 1px),
+    linear-gradient(to bottom, #aec1ff1f 1px, transparent 1px);
+  background-size: 20px 30px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 0%,
+    #000 60%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 0%,
+    #000 60%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 1080px) {
+    .section {
+        padding: 5% 5%;
+    }
+}
+
+
+/* Header mobile style */
+@media (max-width: 798px) {
+    .mobileMenuToggle {
+        display: block;
+    }
+
+    .dropDownContent {
+        position: static;
+        transform: scaleY(0);
+        height: 0;
+    }
+
+    .dropDown:hover .dropDownContent {
+        height: 200px;
+    }
+
+    .dropDownContent .content {
+        min-width: 200px;
+        background: var(--color-bg);
+    }
+
+    nav {
+        padding: 15px 20px;
+    }
+
+    .navConents {
+        position: fixed;
+        flex-direction: column;
+        /* align-items: center; */
+        /* justify-content: center; */
+        gap: 0;
+        top: 70px;
+        background-color: var(--color-bg);
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-200px);
+        transition: .5s;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 9999;
+        background: none;
+        backdrop-filter: blur(10px);
+    }
+
+    .navConents.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .navConents ul {
+        flex-direction: column;
+        gap: 0;
+        text-align: center;
+        margin-top: 10%;
+    }
+
+    .navConents ul li {
+        height: unset;
+        padding: 10px 0;
+        font-size: 1.2rem;
+    }
+
+    .headerBtns {
+        width: 30%;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .headerBtns button {
+        width: 100%;
+    }
+
+}
