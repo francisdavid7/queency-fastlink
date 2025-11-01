@@ -1,9 +1,14 @@
 import { coursesData } from "../../Data/CoursesData";
+import { motion } from "framer-motion";
 import Button from "../Button/Button";
 
 const CourseCard = () => {
   return (
-    <div className="grid gap-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-10">
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      className="grid gap-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-10"
+    >
       {coursesData.map((course) => (
         <div className="card p-6 rounded-lg" key={course.id}>
           <img
@@ -49,7 +54,7 @@ const CourseCard = () => {
           </div>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,8 +1,16 @@
 import Button from "../Button/Button";
 import Counter from "../Counter/Counter";
 import HeroImg from "../../assets/Images/hero.png";
+import VideoPlayer from "../Video.jsx/VideoPlayer";
+import { useState } from "react";
 
 const HeroSection = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const displayVideo = () => {
+    setShowVideo((prevDisplay) => !prevDisplay);
+  };
+
   return (
     <section className="section md:flex gap-15 items-center relative">
       <div className="grid-background"></div>
@@ -22,15 +30,22 @@ const HeroSection = () => {
 
         <div className="heroBtns flex gap-4 mt-6">
           <Button text="Enroll Now" />
-          <button className="transparent no-outline">
+          <button className="transparent no-outline" onClick={displayVideo}>
             <i className="fa-solid fa-play text-[#076ce7]"></i> Watch Demo
           </button>
         </div>
 
+        {showVideo ? (
+          <VideoPlayer
+            src="https://ik.imagekit.io/fhkx5v1dg/movie-20250324-eng_ENpN70rW.mp4?updatedAt=1761987086446"
+            ref={el}
+          />
+        ) : null}
+
         <Counter />
       </div>
 
-      <div className="mt-10 lg:mt-0 lg:basis-1/2 md:basis-0 heroImageContainer z-10 relative">
+      <div className="mt-10 lg:mt-0 lg:basis-1/2 md:basis-0 heroImageContainer z-1 relative">
         <img src={HeroImg} width={450} />
 
         <div className="el flex items-center gap-4 p-4 w-fit rounded-md absolute bottom-0 lg:left-1/2 lg:-translate-x-1/2 bg-color">

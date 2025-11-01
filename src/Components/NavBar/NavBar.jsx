@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import PlaceholderComponent from "../PlaceholderComponent";
+import { Link } from "react-router";
 
 const NavBar = () => {
   const [colorMode, setColorMode] = useState(() => {
@@ -41,7 +42,9 @@ const NavBar = () => {
 
   return (
     <nav className="flex items-center px-6 md:px-16 lg:px-24 xl:px-32">
-      <PlaceholderComponent />
+      <Link to="/">
+        <img src="./logo-light.png" width={150} />
+      </Link>
       <div className="navConents flex items-center gap-8 ml-auto">
         <ul className="navItems flex gap-8 font-medium">
           <li>
