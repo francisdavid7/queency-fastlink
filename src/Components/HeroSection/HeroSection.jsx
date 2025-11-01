@@ -16,9 +16,9 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="section md:flex gap-15 items-center relative">
+    <section className="section grid grid-cols-1 lg:grid-cols-2 gap-15 items-center relative">
       <div className="grid-background"></div>
-      <div className="lg:basis-1/2 md:basis-0 z-999">
+      <div className=" z-999">
         <span className="batch px-4 py-2 block w-fit rounded-full">
           🎓 Professional ICT Training
         </span>
@@ -42,7 +42,7 @@ const HeroSection = () => {
         {showVideo ? (
           <div className="">
             <span
-              className="batch p-2 rounded-full z-1111 absolute top-0 lg:right-50 right-7 cursor-pointer block"
+              className="batch p-2 rounded-full z-1111 fixed top-10 lg:right-50 right-7 cursor-pointer block"
               onClick={closeVideo}
             >
               <i className="fa-solid fa-circle-xmark"></i>
