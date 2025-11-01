@@ -15,7 +15,7 @@ const NavBar = () => {
       initialMode === "light"
         ? document.documentElement.classList.remove("dark-mode")
         : document.documentElement.classList.add("dark-mode");
-      console.log(colorMode);
+      // console.log(colorMode);
     } else {
       localStorage.setItem("color-mode", "light");
       setColorMode("light");
@@ -74,7 +74,11 @@ const NavBar = () => {
 
       <div className="ml-auto">
         <span className="darkModeIcon" onClick={toggleDarkMode}>
-          <i className="fa-solid fa-moon"></i>
+          <i
+            className={
+              colorMode === "light" ? "fa-solid fa-moon" : "fa-solid fa-sun"
+            }
+          ></i>
         </span>
       </div>
 

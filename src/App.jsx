@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router";
+// import { Analytics } from "@vercel/analytics/next";
 import "./App.css";
 import NavBar from "./Components/NavBar/NavBar";
 import HomePage from "./Pages/HomePage";
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
       </Routes>
+      {/* <Analytics /> */}
     </>
   );
 }

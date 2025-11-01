@@ -1,3 +1,5 @@
+import CourseCard from "../Components/CourseCard/CourseCard";
+
 const Courses = () => {
   return (
     <section className="section">
@@ -6,9 +8,13 @@ const Courses = () => {
           Our <span>Popular</span> Courses
         </h1>
         <p className="paragraph mt-4">
-          We provide world-class ICT training with a focus on practical skills,
-          industry certifications, and career success.
+          Choose from our comprehensive range of industry-relevant courses
+          designed to help you master in-demand technology skills.
         </p>
+      </div>
+
+      <div>
+        <CourseCard />
       </div>
     </section>
   );

@@ -33,7 +33,7 @@ const HeroSection = () => {
       <div className="mt-10 lg:mt-0 lg:basis-1/2 md:basis-0 heroImageContainer z-10 relative">
         <img src={HeroImg} width={450} />
 
-        <div className="flex items-center gap-4 p-4 w-fit rounded-md shadow-[0px_4px_25px_0px_#0000000D] absolute bottom-0 lg:left-1/2 lg:-translate-x-1/2 bg-color">
+        <div className="el flex items-center gap-4 p-4 w-fit rounded-md absolute bottom-0 lg:left-1/2 lg:-translate-x-1/2 bg-color">
           <span className="batch p-2 text-2xl rounded-full flex items-center justify-center">
             <i className="fa-regular fa-circle-check"></i>
           </span>
