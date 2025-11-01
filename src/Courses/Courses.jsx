@@ -2,7 +2,7 @@ import CourseCard from "../Components/CourseCard/CourseCard";
 
 const Courses = () => {
   return (
-    <section className="section">
+    <section className="section lg:mt-0 mt-10">
       <div className="m-auto text-center lg:w-[60%] w-full">
         <h1 className="heading lg:text-3xl md:text-2xl text-xl font-bold">
           Our <span>Popular</span> Courses

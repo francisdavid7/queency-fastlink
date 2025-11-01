@@ -14,7 +14,7 @@ const HeroSection = () => {
   return (
     <section className="section md:flex gap-15 items-center relative">
       <div className="grid-background"></div>
-      <div className="lg:basis-1/2 md:basis-0 z-10">
+      <div className="lg:basis-1/2 md:basis-0 z-999">
         <span className="batch px-4 py-2 block w-fit rounded-full">
           🎓 Professional ICT Training
         </span>
@@ -36,10 +36,7 @@ const HeroSection = () => {
         </div>
 
         {showVideo ? (
-          <VideoPlayer
-            src="https://ik.imagekit.io/fhkx5v1dg/movie-20250324-eng_ENpN70rW.mp4?updatedAt=1761987086446"
-            ref={el}
-          />
+          <VideoPlayer src="https://ik.imagekit.io/fhkx5v1dg/movie-20250324-eng_ENpN70rW.mp4?updatedAt=1761987086446" />
         ) : null}
 
         <Counter />

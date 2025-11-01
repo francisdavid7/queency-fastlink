@@ -44,11 +44,11 @@ const VideoJS = ({ options, onReady }) => {
   }, [playerRef]);
 
   return (
-    <div className="fixed flex items-center justify-center w-full h-full bg-black/50 top-0 left-0 z-999">
+    <div className="fixed flex lg:items-center items-start lg:pt-0 pt-[30%] justify-center w-full h-full bg-black/50 top-0 left-0 z-999">
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="bg-red-500 w-[50%] overflow-hidden rounded-[30px] border-blue-400 border-2"
+        className="bg-red-500 lg:w-[50%] w-[90%] overflow-hidden rounded-[30px] border-blue-400 border-2"
       >
         <div data-vjs-player>
           <div ref={videoRef} className="w-[100%]" />
