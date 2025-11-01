@@ -11,6 +11,10 @@ const HeroSection = () => {
     setShowVideo((prevDisplay) => !prevDisplay);
   };
 
+  const closeVideo = () => {
+    setShowVideo((prevDisplay) => !prevDisplay);
+  };
+
   return (
     <section className="section md:flex gap-15 items-center relative">
       <div className="grid-background"></div>
@@ -36,7 +40,15 @@ const HeroSection = () => {
         </div>
 
         {showVideo ? (
-          <VideoPlayer src="https://ik.imagekit.io/fhkx5v1dg/movie-20250324-eng_ENpN70rW.mp4?updatedAt=1761987086446" />
+          <div className="">
+            <span
+              className="batch p-2 rounded-full z-1111 absolute top-0 lg:right-50 right-7 cursor-pointer block"
+              onClick={closeVideo}
+            >
+              <i className="fa-solid fa-circle-xmark"></i>
+            </span>
+            <VideoPlayer src="https://ik.imagekit.io/fhkx5v1dg/movie-20250324-eng_ENpN70rW.mp4?updatedAt=1761987086446" />
+          </div>
         ) : null}
 
         <Counter />
