@@ -203,7 +203,7 @@ nav ul > li.dropDown:hover span {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 0;
+  z-index: -1;
   background-image: linear-gradient(to right, #aec1ff1f 1px, transparent 1px),
     linear-gradient(to bottom, #aec1ff1f 1px, transparent 1px);
   background-size: 20px 30px;
