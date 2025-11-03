@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Button from "../Button/Button";
-import PlaceholderComponent from "../PlaceholderComponent";
 import { Link } from "react-router";
 
 const NavBar = () => {

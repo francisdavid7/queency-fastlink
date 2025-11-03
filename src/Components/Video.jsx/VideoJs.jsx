@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 
-const VideoJS = ({ options, onReady }) => {
+const VideoJS = ({ options, onReady, className }) => {
   const videoRef = useRef(null);
   const playerRef = useRef(null);
 
@@ -44,7 +44,7 @@ const VideoJS = ({ options, onReady }) => {
   }, [playerRef]);
 
   return (
-    <div className="fixed flex lg:items-center items-start lg:pt-0 pt-[30%] justify-center w-full h-full bg-black/50 top-0 left-0 z-999">
+    <div className={className}>
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

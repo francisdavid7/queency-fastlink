@@ -47,7 +47,10 @@ const HeroSection = () => {
             >
               <i className="fa-solid fa-circle-xmark"></i>
             </span>
-            <VideoPlayer src="https://ik.imagekit.io/fhkx5v1dg/movie-20250324-eng_ENpN70rW.mp4?updatedAt=1761987086446" />
+            <VideoPlayer
+              className="fixed flex lg:items-center items-start lg:pt-0 pt-[30%] justify-center w-full h-full bg-black/50 top-0 left-0 z-999"
+              src="https://ik.imagekit.io/fhkx5v1dg/movie-20250324-eng_ENpN70rW.mp4?updatedAt=1761987086446"
+            />
           </div>
         ) : null}
 

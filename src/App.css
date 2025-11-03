@@ -164,7 +164,7 @@ nav ul > li.dropDown:hover span {
     opacity: 0;
     transition: var(--transition-medium);
     pointer-events: none;
-    z-index: 999;
+    z-index: 2000;
 }
 
 .dropDown:hover .dropDownContent {
@@ -217,6 +217,21 @@ nav ul > li.dropDown:hover span {
     #000 60%,
     transparent 100%
   );
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-surface);
+  color: var(--color-text-light);        
+}
+
+.footer a {
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+
+.footer a:hover {
+  color: var(--color-primary-light);
 }
 
 @media (max-width: 1080px) {

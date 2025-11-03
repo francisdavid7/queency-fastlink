@@ -4,7 +4,7 @@ const Courses = () => {
   return (
     <section className="section lg:mt-0 mt-10">
       <div className="m-auto text-center lg:w-[60%] w-full">
-        <h1 className="heading lg:text-3xl md:text-2xl text-xl font-bold">
+        <h1 className="heading">
           Our <span>Popular</span> Courses
         </h1>
         <p className="paragraph mt-4">

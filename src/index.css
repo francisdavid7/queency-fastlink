@@ -24,4 +24,8 @@
     .counter h4 {
         @apply lg:text-3xl sm:text-2xl text-xl;
     }
+
+    .heading {
+        @apply lg:text-3xl md:text-2xl text-xl font-bold;
+    }
 }

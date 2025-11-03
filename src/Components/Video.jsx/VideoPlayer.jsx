@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import VideoJS from "./VideoJs";
 
-const VideoPlayer = ({ src }) => {
+const VideoPlayer = ({ src, className }) => {
   const playerRef = useRef(null);
 
   const videoJsOptions = {
@@ -32,7 +32,11 @@ const VideoPlayer = ({ src }) => {
 
   return (
     <>
-      <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
+      <VideoJS
+        options={videoJsOptions}
+        onReady={handlePlayerReady}
+        className={className}
+      />
     </>
   );
 };
