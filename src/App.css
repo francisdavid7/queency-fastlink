@@ -349,3 +349,9 @@ nav ul > li.dropDown:hover span {
     }
 
 }
+
+@media (max-width: 500px) {
+    .slick-slider .slick-track > div {
+    flex: 1 0 300px;
+}
+}
