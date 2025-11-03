@@ -1,7 +1,8 @@
 import HeroSection from "../Components/HeroSection/HeroSection";
-import Courses from "../Courses/Courses";
+import Courses from "../Components/Courses/Courses";
 import "../App.css";
 import About from "../Components/About/About";
+import TrendingCourses from "../Components/TrendingCourses/TrendingCourses";
 
 const HomePage = () => {
   return (
@@ -9,6 +10,7 @@ const HomePage = () => {
       <HeroSection />
       <Courses />
       <About />
+      <TrendingCourses />
     </>
   );
 };
