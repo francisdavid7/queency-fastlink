@@ -1,7 +1,7 @@
 import { useState } from "react";
 import aboutThumbailImg from "../../assets/Images/about-thumbnail.jpg";
 import VideoPlayer from "../Video.jsx/VideoPlayer";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const About = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -16,34 +16,50 @@ const About = () => {
 
   return (
     <section className="section text-center">
-      <h1 className="heading">
+      <motion.h1
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="heading"
+      >
         <span>About</span> Company
-      </h1>
-      <p className="paragraph mt-5">
+      </motion.h1>
+      <motion.p
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="paragraph mt-5"
+      >
         At TechPro ICT Training School, we are committed to empowering
         individuals with practical digital skills that drive innovation and
         career growth. Since our inception, we have trained students,
         entrepreneurs, and professionals in essential ICT fields such as Web
         Development, Graphic Design, Office Applications, UI/UX Design, Digital
         Printing, and Digital Branding.
-      </p>
+      </motion.p>
 
-      <p className="paragraph my-10">
+      <motion.p
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        className="paragraph my-10"
+      >
         Our goal is to bridge the digital skills gap by providing hands-on,
         project-based training delivered by experienced instructors. We believe
         in learning by doing — equipping our students with the confidence and
         competence to thrive in today’s technology-driven world. Whether you’re
         starting a new career or upgrading your skills, TechPro ICT is your
         gateway to a successful digital future.
-      </p>
+      </motion.p>
 
       {!showVideo && (
         <motion.div
           className="relative"
           initial={{
             scale: 0.5,
+            y: 50,
             opacity: 0
           }}
+          whileInView={{ y: 0, opacity: 1 }}
           animate={{
             scale: 0.8,
             opacity: 1

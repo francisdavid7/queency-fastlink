@@ -1,4 +1,5 @@
 import { TrendingCoursesData } from "../../Data/TrendingCoursesData";
+import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -42,7 +43,11 @@ const CourseSlider = () => {
   };
 
   return (
-    <div>
+    <motion.div
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <Slider {...settings}>
         {TrendingCoursesData.map((course, index) => (
           <div
@@ -58,7 +63,7 @@ const CourseSlider = () => {
           </div>
         ))}
       </Slider>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,11 +1,28 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router";
+import { motion } from "framer-motion";
 
 const Footer = () => {
+  const [colorMode, setColorMode] = useState();
+
+  useEffect(() => {
+    const initialMode = localStorage.getItem("color-mode");
+    setColorMode(initialMode);
+  }, [colorMode]);
+
   return (
-    <footer className="footer flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500">
+    <motion.footer
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="footer flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500"
+    >
       <div className="flex flex-wrap items-start gap-10 md:gap-[60px] xl:gap-[140px]">
         <Link to="/">
-          <img src="./logo-light.png" width={120} />
+          <img
+            src={colorMode === "dark" ? "./logo-dark.png" : "./logo-light.png"}
+            width={120}
+          />
         </Link>
 
         <div>
@@ -158,7 +175,7 @@ const Footer = () => {
           © {new Date().getFullYear()} <a href="">Francis David</a>
         </p>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

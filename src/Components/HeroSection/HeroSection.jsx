@@ -3,6 +3,7 @@ import Counter from "../Counter/Counter";
 import HeroImg from "../../assets/Images/hero.png";
 import VideoPlayer from "../Video.jsx/VideoPlayer";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -18,7 +19,12 @@ const HeroSection = () => {
   return (
     <section className="section grid grid-cols-1 lg:grid-cols-2 gap-15 items-center relative">
       <div className="grid-background"></div>
-      <div className=" z-999">
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className=" z-999"
+      >
         <span className="batch px-4 py-2 block w-fit rounded-full">
           🎓 Professional ICT Training
         </span>
@@ -55,9 +61,14 @@ const HeroSection = () => {
         ) : null}
 
         <Counter />
-      </div>
+      </motion.div>
 
-      <div className="mt-10 lg:mt-0 lg:basis-1/2 md:basis-0 heroImageContainer z-1 relative">
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="mt-10 lg:mt-0 lg:basis-1/2 md:basis-0 heroImageContainer z-1 relative"
+      >
         <img src={HeroImg} width={450} />
 
         <div className="el flex items-center gap-4 p-4 w-fit rounded-md absolute bottom-0 lg:left-1/2 lg:-translate-x-1/2 bg-color">
@@ -69,7 +80,7 @@ const HeroSection = () => {
             <p className="paragraph">Industry Recognized</p>
           </span>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

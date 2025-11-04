@@ -1,16 +1,17 @@
 import { coursesData } from "../../Data/CoursesData";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Button from "../Button/Button";
 
 const CourseCard = () => {
   return (
-    <motion.div
-      initial={{ y: 50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      className="grid gap-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-10"
-    >
+    <div className="grid gap-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-10">
       {coursesData.map((course) => (
-        <div className="card p-6 rounded-lg" key={course.id}>
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          className="card p-6 rounded-lg"
+          key={course.id}
+        >
           <img
             className="rounded-lg mb-5 w-full h-[180px] object-cover"
             src={course.image}
@@ -52,9 +53,9 @@ const CourseCard = () => {
 
             <Button text="Enroll Now" className="text-[13px]" />
           </div>
-        </div>
+        </motion.div>
       ))}
-    </motion.div>
+    </div>
   );
 };
 
