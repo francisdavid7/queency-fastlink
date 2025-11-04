@@ -41,6 +41,7 @@ const About = () => {
       <motion.p
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
         className="paragraph my-10"
       >
         Our goal is to bridge the digital skills gap by providing hands-on,

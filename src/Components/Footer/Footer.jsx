@@ -3,11 +3,19 @@ import { Link } from "react-router";
 import { motion } from "framer-motion";
 
 const Footer = () => {
-  const [colorMode, setColorMode] = useState();
+  const [colorMode, setColorMode] = useState(() => {
+    return localStorage.getItem("color-mode");
+  });
 
   useEffect(() => {
-    const initialMode = localStorage.getItem("color-mode");
-    setColorMode(initialMode);
+    const currentMode = colorMode;
+    if (currentMode === "light") {
+      localStorage.setItem("color-mode", "light");
+      setColorMode("light");
+    } else {
+      localStorage.setItem("color-mode", "dark");
+      setColorMode("dark");
+    }
   }, [colorMode]);
 
   return (
@@ -20,7 +28,7 @@ const Footer = () => {
       <div className="flex flex-wrap items-start gap-10 md:gap-[60px] xl:gap-[140px]">
         <Link to="/">
           <img
-            src={colorMode === "dark" ? "./logo-dark.png" : "./logo-light.png"}
+            src={colorMode === "light" ? "./logo-light.png" : "logo-dark.png"}
             width={120}
           />
         </Link>

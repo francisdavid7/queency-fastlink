@@ -223,6 +223,15 @@ nav ul > li.dropDown:hover span {
     color: #fff;
 }
 
+.why > div {
+    border-color: var(--color-border);
+}
+
+.why > div .batch {
+    color: var(--color-text-light);
+}
+
+/* Slider */
 .slick-slider .slick-track  {
     display: flex;
     gap: 15px;

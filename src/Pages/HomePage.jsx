@@ -3,6 +3,7 @@ import Courses from "../Components/Courses/Courses";
 import "../App.css";
 import About from "../Components/About/About";
 import TrendingCourses from "../Components/Courses/TrendingCourses";
+import WhyChooseUs from "../Components/WhyChooseUs/WhyChooseUs";
 
 const HomePage = () => {
   return (
@@ -10,6 +11,7 @@ const HomePage = () => {
       <HeroSection />
       <Courses />
       <About />
+      <WhyChooseUs />
       <TrendingCourses />
     </>
   );
