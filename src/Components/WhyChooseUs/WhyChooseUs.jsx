@@ -19,7 +19,7 @@ const WhyChooseUs = () => {
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 1 }}
             key={index}
             className="p-5 border rounded-lg"
           >

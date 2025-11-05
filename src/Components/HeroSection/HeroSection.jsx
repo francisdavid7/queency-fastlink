@@ -22,7 +22,7 @@ const HeroSection = () => {
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
         className=" z-999"
       >
         <span className="batch px-4 py-2 block w-fit rounded-full">
@@ -66,7 +66,7 @@ const HeroSection = () => {
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
+        transition={{ duration: 1, delay: 0.3 }}
         className="mt-10 lg:mt-0 lg:basis-1/2 md:basis-0 heroImageContainer z-1 relative"
       >
         <img src={HeroImg} width={450} />

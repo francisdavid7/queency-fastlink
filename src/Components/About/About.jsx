@@ -19,7 +19,7 @@ const About = () => {
       <motion.h1
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
         className="heading"
       >
         <span>About</span> Company
@@ -27,7 +27,7 @@ const About = () => {
       <motion.p
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
         className="paragraph mt-5"
       >
         At TechPro ICT Training School, we are committed to empowering
@@ -41,7 +41,7 @@ const About = () => {
       <motion.p
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
         className="paragraph my-10"
       >
         Our goal is to bridge the digital skills gap by providing hands-on,

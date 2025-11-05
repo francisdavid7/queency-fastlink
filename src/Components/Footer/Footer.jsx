@@ -1,28 +1,16 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { ThemeContext } from "../../Context/ThemeContext";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
 
 const Footer = () => {
-  const [colorMode, setColorMode] = useState(() => {
-    return localStorage.getItem("color-mode");
-  });
-
-  useEffect(() => {
-    const currentMode = colorMode;
-    if (currentMode === "light") {
-      localStorage.setItem("color-mode", "light");
-      setColorMode("light");
-    } else {
-      localStorage.setItem("color-mode", "dark");
-      setColorMode("dark");
-    }
-  }, [colorMode]);
+  const { colorMode } = useContext(ThemeContext);
 
   return (
     <motion.footer
       initial={{ y: 50, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 1 }}
       className="footer flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500"
     >
       <div className="flex flex-wrap items-start gap-10 md:gap-[60px] xl:gap-[140px]">

@@ -4,15 +4,18 @@ import "./App.css";
 import NavBar from "./Components/NavBar/NavBar";
 import HomePage from "./Pages/HomePage";
 import Footer from "./Components/Footer/Footer";
+import { ThemeProvider } from "./Context/ThemeContext";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-      <Footer />
+      <ThemeProvider>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+        <Footer />
+      </ThemeProvider>
       {/* <Analytics /> */}
     </>
   );

@@ -1,38 +1,10 @@
-import { useEffect, useState } from "react";
 import Button from "../Button/Button";
+import { useContext } from "react";
+import { ThemeContext } from "../../Context/ThemeContext";
 import { Link } from "react-router";
 
 const NavBar = () => {
-  const [colorMode, setColorMode] = useState(() => {
-    const currentMode = localStorage.getItem("color-mode");
-
-    return currentMode === null ? "light" : currentMode;
-  });
-
-  useEffect(() => {
-    const initialMode = localStorage.getItem("color-mode");
-    if (initialMode) {
-      initialMode === "light"
-        ? document.documentElement.classList.remove("dark-mode")
-        : document.documentElement.classList.add("dark-mode");
-      // console.log(colorMode);
-    } else {
-      localStorage.setItem("color-mode", "light");
-      setColorMode("light");
-    }
-  }, [colorMode]);
-
-  const toggleDarkMode = () => {
-    if (colorMode === "light") {
-      document.documentElement.classList.add("dark-mode");
-      localStorage.setItem("color-mode", "dark");
-      setColorMode("dark");
-    } else {
-      document.documentElement.classList.remove("dark-mode");
-      localStorage.setItem("color-mode", "light");
-      setColorMode("light");
-    }
-  };
+  const { colorMode, toggleDarkMode } = useContext(ThemeContext);
 
   const toggleNavBar = () => {
     const navConents = document.querySelector(".navConents");
