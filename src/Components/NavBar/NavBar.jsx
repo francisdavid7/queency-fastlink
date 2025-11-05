@@ -1,6 +1,8 @@
 import Button from "../Button/Button";
 import { useContext } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
+import AboutUs from "../../Pages/AboutUs";
+import { coursesData } from "../../Data/CoursesData";
 import { Link } from "react-router";
 
 const NavBar = () => {
@@ -22,10 +24,10 @@ const NavBar = () => {
       <div className="navConents flex items-center gap-8 ml-auto">
         <ul className="navItems flex gap-8 font-medium">
           <li>
-            <a>Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a>About Us</a>
+            <Link to="/about-us">About Us</Link>
           </li>
           <li className="dropDown relative">
             <span>
@@ -36,9 +38,9 @@ const NavBar = () => {
 
             <div className="dropDownContent absolute top-16 p-4">
               <div className="content">
-                <a>Course 1</a>
-                <a>Course 2</a>
-                <a>Course 3</a>
+                {coursesData.map((data, index) => (
+                  <a key={index}>{data.title}</a>
+                ))}
               </div>
             </div>
           </li>
