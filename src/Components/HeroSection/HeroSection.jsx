@@ -17,7 +17,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="section grid grid-cols-1 lg:grid-cols-2 gap-15 items-center relative">
+    <section className="section hero grid grid-cols-1 lg:grid-cols-2 gap-15 items-center relative">
       <div className="grid-background"></div>
       <motion.div
         initial={{ y: 50, opacity: 0 }}

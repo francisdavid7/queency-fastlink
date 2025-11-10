@@ -61,6 +61,10 @@ p, span, li, div, button {
     color: var(--color-text);
 }
 
+.border-color {
+    border-color: var(--color-border);
+}
+
 .batch {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -137,10 +141,16 @@ button:hover {
 }
 
 nav {
+    background: transparent;
+    transition: var(--transition-medium);
+    z-index: 20000;
+}
+
+nav.scrolled {
     background: var(--color-surface);
 }
 
-nav ul > li:not(:last-child):hover {
+nav ul > li:hover {
     color: var(--color-primary);
     cursor: pointer;
 }
@@ -217,6 +227,10 @@ nav ul > li.dropDown:hover span {
     #000 60%,
     transparent 100%
   );
+}
+
+.hero {
+    padding-top: 8%;
 }
 
 .t-overlay h2 {

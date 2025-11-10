@@ -1,12 +1,24 @@
 import Button from "../Button/Button";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ThemeContext } from "../../Context/ThemeContext";
-import AboutUs from "../../Pages/AboutUs";
 import { coursesData } from "../../Data/CoursesData";
 import { Link } from "react-router";
 
 const NavBar = () => {
   const { colorMode, toggleDarkMode } = useContext(ThemeContext);
+  const [scrolled, setScrolled] = useState(false);
+
+  const addBackoundOnScroll = () => {
+    if (window.scrollY > 100) {
+      setScrolled(true);
+      document.querySelector("nav").classList.add("scrolled");
+    } else {
+      setScrolled(false);
+      document.querySelector("nav").classList.remove("scrolled");
+    }
+  };
+
+  window.addEventListener("scroll", addBackoundOnScroll);
 
   const toggleNavBar = () => {
     const navConents = document.querySelector(".navConents");
@@ -14,8 +26,8 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="flex items-center px-6 md:px-16 lg:px-24 xl:px-32">
-      <Link to="/">
+    <nav className="fixed w-full flex items-center px-6 md:px-16 lg:px-24 xl:px-32">
+      <Link to="/" onClick={toggleNavBar}>
         <img
           src={colorMode === "light" ? "./logo-light.png" : "./logo-dark.png"}
           width={150}
@@ -24,10 +36,14 @@ const NavBar = () => {
       <div className="navConents flex items-center gap-8 ml-auto">
         <ul className="navItems flex gap-8 font-medium">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={toggleNavBar}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/about-us">About Us</Link>
+            <Link to="/about-us" onClick={toggleNavBar}>
+              About Us
+            </Link>
           </li>
           <li className="dropDown relative">
             <span>
@@ -44,10 +60,18 @@ const NavBar = () => {
               </div>
             </div>
           </li>
+
+          <li>
+            <Link to="/contact-us" onClick={toggleNavBar}>
+              Contact Us
+            </Link>
+          </li>
         </ul>
         <div className="headerBtns ml-auto flex gap-2">
           <Button className="transparent ml-auto" text="Login" />
-          <Button text="Get Started" />
+          <Link to="/register">
+            <Button text="Get Started" />
+          </Link>
         </div>
       </div>
 

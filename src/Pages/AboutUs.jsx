@@ -1,47 +1,34 @@
-// import "../App.css";
-import aboutUsImg from "../assets/Images/about-us.jpg";
+import { motion } from "framer-motion";
+import ContactForm from "../Components/Forms/ContactForm";
+import SiderImage from "../Components/SiderImage";
 
 const AboutUs = () => {
   return (
     <section className="section">
-      <h1 className="heading text-center mb-8">
+      <motion.h1
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="heading text-center mb-8"
+      >
         <span>About</span> Us
-      </h1>
+      </motion.h1>
       <div className="flex flex-col md:flex-row items-start gap-12">
-        <div className="relative shadow-2xl shadow-indigo-600/40 rounded-2xl overflow-hidden shrink-0">
-          <img
-            className="max-w-md w-full object-cover rounded-2xl"
-            src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=451&h=451&auto=format&fit=crop"
-            alt="Developer Community"
-          />
-          <div className="flex items-center gap-1 max-w-72 absolute bottom-8 left-8 bg-white p-4 rounded-xl">
-            <div className="flex -space-x-4 shrink-0">
-              <img
-                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200"
-                alt="member"
-                className="size-9 rounded-full border-[3px] border-white hover:-translate-y-1 transition z-1"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200"
-                alt="member"
-                className="size-9 rounded-full border-[3px] border-white hover:-translate-y-1 transition z-[2]"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop"
-                alt="member"
-                className="size-9 rounded-full border-[3px] border-white hover:-translate-y-1 transition z-[3]"
-              />
-              <div className="flex items-center justify-center text-xs text-white size-9 rounded-full border-[3px] border-white bg-indigo-600 hover:-translate-y-1 transition z-[4]">
-                50+
-              </div>
-            </div>
-            <p className="text-sm font-medium text-slate-800">
-              Join our developer community
-            </p>
-          </div>
+        <div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="relative shadow-2xl shadow-indigo-600/40 rounded-2xl overflow-hidden shrink-0"
+        >
+          <SiderImage />
         </div>
 
-        <div className="text-sm text-slate-600 max-w-lg">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="text-sm text-slate-600 max-w-lg"
+        >
           <div>
             <div>
               <h1 className="text-xl uppercase font-semibold text-slate-700">
@@ -151,7 +138,7 @@ const AboutUs = () => {
               your future in technology — one skill at a time.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
