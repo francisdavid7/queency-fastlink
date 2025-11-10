@@ -10,6 +10,8 @@ import { SpinnerDotted } from "spinners-react";
 import { useEffect, useState } from "react";
 import ContactUs from "./Pages/ContactUs";
 import SignupForm from "./Components/Forms/SignUpForm";
+import PageNotFound from "./Pages/PageNotFound";
+import StudentDashboard from "./Pages/Dashboard/StudentDashboard";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -43,6 +45,8 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/register" element={<SignupForm />} />
+          <Route path="/dashboard" element={<StudentDashboard />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
       </ThemeProvider>

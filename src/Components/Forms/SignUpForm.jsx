@@ -28,7 +28,7 @@ const SignupForm = () => {
   };
 
   return (
-    <section className="section">
+    <section className="py-30">
       <div className="bg-color max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
           Student Registration Form

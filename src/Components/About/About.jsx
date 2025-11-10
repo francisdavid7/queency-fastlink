@@ -83,7 +83,7 @@ const About = () => {
       {showVideo ? (
         <div className="">
           <span
-            className="batch p-2 rounded-full z-1111 fixed top-10 lg:right-50 right-7 cursor-pointer block"
+            className="batch p-2 rounded-full z-1111 fixed top-20 lg:right-50 right-7 cursor-pointer block"
             onClick={closeVideo}
           >
             <i className="fa-solid fa-circle-xmark"></i>
