@@ -54,12 +54,12 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Inter";
-    color: var(--color-text);
+    /* color: var(--color-text); */
 }
 
 p, span, li, div, button {
     font-family: "Syne";
-    color: var(--color-text);
+    /* color: var(--color-text); */
 }
 
 .border-color {

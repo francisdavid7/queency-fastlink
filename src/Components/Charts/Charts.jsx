@@ -9,13 +9,15 @@ const data = chartData;
 const Charts = () => {
   return (
     <div className="flex items-center gap-1">
-      <div className="w-1/2">
+      <div className="lg:w-1/2 w-full">
         <Doughnut data={data} />
       </div>
 
       <div className="w-full flex flex-col gap-2">
         {data.labels.map((item, index) => (
-          <p className="batch p-2 rounded-md">
+          <p
+            className={`p-2`}
+          >
             {item} - {data.datasets.map((d) => d.data[index])}
           </p>
         ))}
