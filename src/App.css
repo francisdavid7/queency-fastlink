@@ -40,6 +40,7 @@
 
 * {
     transition: var(--transition-fast);
+    list-style-type: none;
 }
 
 body {
@@ -63,6 +64,22 @@ p, span, li, div, button {
 
 .border-color {
     border-color: var(--color-border);
+}
+
+.surface-color {
+    background: var(--color-surface);
+}
+
+.surface-color-hover {
+    background: var(--color-border);
+}
+
+.surface-hover:hover {
+    background: var(--color-surface);
+}
+
+.text-yellow {
+    color: #7f22fe;
 }
 
 .batch {
@@ -287,6 +304,11 @@ nav ul > li.dropDown:hover span {
   color: var(--color-primary-light);
 }
 
+/* Dashboard */
+.dashboard main {
+    background: var(--color-surface);
+}
+
 @media (max-width: 1080px) {
     .section {
         padding: 5% 5%;
@@ -375,6 +397,6 @@ nav ul > li.dropDown:hover span {
 
 @media (max-width: 500px) {
     .slick-slider .slick-track > div {
-    flex: 1 0 300px;
-}
+        flex: 1 0 300px;
+    }
 }

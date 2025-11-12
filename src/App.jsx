@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { Route, Routes, useLocation } from "react-router";
 // import { Analytics } from "@vercel/analytics/next";
 import "./App.css";
 import NavBar from "./Components/NavBar/NavBar";
@@ -6,50 +6,37 @@ import HomePage from "./Pages/HomePage";
 import Footer from "./Components/Footer/Footer";
 import { ThemeProvider } from "./Context/ThemeContext";
 import AboutUs from "./Pages/AboutUs";
-import { SpinnerDotted } from "spinners-react";
-import { useEffect, useState } from "react";
 import ContactUs from "./Pages/ContactUs";
 import SignupForm from "./Components/Forms/SignUpForm";
 import PageNotFound from "./Pages/PageNotFound";
 import StudentDashboard from "./Pages/Dashboard/StudentDashboard";
+import Loader from "./Components/Loader";
+import { MenuProvider } from "./Context/MenuContext";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
 
-  useEffect(() => {
-    const loading = setTimeout(() => {
-      if (isLoading) {
-        setIsLoading(false);
-      }
-    }, 3000);
+  const hideNavBarRoutes = ["/dashboard", "/register", "/login"];
 
-    return () => clearInterval(loading);
-  }, []);
+  const shouldHideNavBar = hideNavBarRoutes.includes(location.pathname);
 
   return (
     <>
-      {isLoading && (
-        <div className="bg-color fixed w-full h-full z-[30000] flex justify-center items-center">
-          <SpinnerDotted
-            size={80}
-            thickness={100}
-            speed={100}
-            color="#3b82f6"
-          />
-        </div>
-      )}
-      <ThemeProvider>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/register" element={<SignupForm />} />
-          <Route path="/dashboard" element={<StudentDashboard />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-        <Footer />
-      </ThemeProvider>
+      <Loader />
+      <MenuProvider>
+        <ThemeProvider>
+          {!shouldHideNavBar && <NavBar />}
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/register" element={<SignupForm />} />
+            <Route path="/dashboard" element={<StudentDashboard />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+          {!shouldHideNavBar && <Footer />}
+        </ThemeProvider>
+      </MenuProvider>
       {/* <Analytics /> */}
     </>
   );

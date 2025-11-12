@@ -23,7 +23,7 @@ const HeroSection = () => {
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1 }}
-        className=" z-999"
+        className=" z-999 lg:mt-0 mt-20"
       >
         <span className="batch px-4 py-2 block w-fit rounded-full">
           🎓 Professional ICT Training

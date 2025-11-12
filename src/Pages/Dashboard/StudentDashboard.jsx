@@ -1,11 +1,19 @@
-import React from "react";
+import DashboardContent from "../../Components/DashboardComps/DashboardContent";
+import Sidebar from "../../Components/DashboardComps/Sidebar";
+import { useMenuContext } from "../../Context/MenuContext";
 
 const StudentDashboard = () => {
+  const { activeMenu, setActiveMenu } = useMenuContext();
   return (
-    <section className="section">
-      <h1 className="text-3xl text-center mt-10 font-bold">
-        Welcome to your Dashboard!
-      </h1>
+    <section className="min-h-screen dashboard lg:grid grid-cols-5">
+      <Sidebar />
+      {activeMenu && (
+        <div
+          onClick={() => setActiveMenu((prev) => !prev)}
+          className="fixed w-full h-full backdrop-blur-[5px] bg-black/10 top-0 z-9"
+        />
+      )}
+      <DashboardContent />
     </section>
   );
 };
