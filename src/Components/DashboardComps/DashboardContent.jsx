@@ -60,8 +60,15 @@ const DashboardContent = () => {
           <h2 className="heading text-xl font-bold">
             Your <span>Courses</span>
           </h2>
+
           {/* Courses slide */}
           <div className="mt-5 flex gap-2 overflow-auto">
+            <Card
+              title="Web Development"
+              tutor="Francis David"
+              level="Beginner to Advanced"
+              className="shrink-0"
+            />
             <Card
               title="Web Development"
               tutor="Francis David"
